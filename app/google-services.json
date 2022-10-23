@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698092983188",
+    "project_id": "heart-disease-predictor-e50df",
+    "storage_bucket": "heart-disease-predictor-e50df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698092983188:android:106c9f4bd1ff66d85f7581",
+        "android_client_info": {
+          "package_name": "com.aditya.heartdiseasepredictor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698092983188-6qoc4m252kfgt2hqpqlhfclrmdlmjf0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp3XFTpwZmmJA6SYivMBhXR4U72etS4fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698092983188-6qoc4m252kfgt2hqpqlhfclrmdlmjf0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
