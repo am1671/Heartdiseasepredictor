@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private EditText cp, thalach, slope, restecg, chol, trestbps, fbs, oldpeak;
+    private EditText cp, thalach, slope, restecg, chol, trestbps, fbs, oldpeak, age, gender, exang, ca, thal;
     private Button predict;
     private ImageButton info1, info2, info3, info4, info5, info6, info7, info8;
     private TextView result;
@@ -58,6 +58,11 @@ public class DetailActivity extends AppCompatActivity {
         fbs = findViewById(R.id.fbs);
         oldpeak = findViewById(R.id.oldpeak);
         predict = findViewById(R.id.predict);
+        age = findViewById(R.id.age);
+        gender = findViewById(R.id.gender);
+        exang = findViewById(R.id.exang);
+        ca = findViewById(R.id.ca);
+        thal = findViewById(R.id.thal);
         info1 = findViewById(R.id.info1);
         info2 = findViewById(R.id.info2);
         info3 = findViewById(R.id.info3);
@@ -111,7 +116,7 @@ public class DetailActivity extends AppCompatActivity {
                                             result.setText("Patient likely does not have Heart Disease");
                                         }else {
                                             result.setTextColor(Color.parseColor("#EC4C4C"));
-                                            result.setText("Patient likely has Disease");
+                                            result.setText("Patient likely has Heart Disease");
                                         }
 
                                         cp.setText("");
@@ -122,6 +127,11 @@ public class DetailActivity extends AppCompatActivity {
                                         trestbps.setText("");
                                         fbs.setText("");
                                         oldpeak.setText("");
+                                        age.setText("");
+                                        gender.setText("");
+                                        ca.setText("");
+                                        thal.setText("");
+                                        exang.setText("");
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -235,13 +245,13 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-//        tips.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(DetailActivity.this,InfoActivity.class));
-//                finish();
-//            }
-//        });
+        tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this,InfoActivity.class));
+                finish();
+            }
+        });
     }
 
     private void infoDialog(String i, String string) {
