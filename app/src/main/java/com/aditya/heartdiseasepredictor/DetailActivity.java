@@ -1,5 +1,6 @@
 package com.aditya.heartdiseasepredictor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -24,6 +25,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,12 +39,24 @@ import java.util.Map;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private EditText cp, thalach, slope, restecg, chol, trestbps, fbs, oldpeak, age, gender, exang, ca, thal;
+    private EditText cp, thalach, slope, restecg, chol, trestbps, fbs, oldpeak, ageEdit, gender, exang, ca, thal;
     private Button predict;
     private ImageButton info1, info2, info3, info4, info5, info6, info7, info8;
     private TextView result;
     private Button tips;
     String url = "https://hearth-disease-prediction-app.herokuapp.com/predict";
+
+    // Trials
+
+    FirebaseDatabase firebaseDatabase;
+
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
+
+    // creating a variable for
+    // our object class
+    UserInfo userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +76,7 @@ public class DetailActivity extends AppCompatActivity {
         fbs = findViewById(R.id.fbs);
         oldpeak = findViewById(R.id.oldpeak);
         predict = findViewById(R.id.predict);
-        age = findViewById(R.id.age);
+        ageEdit = findViewById(R.id.age);
         gender = findViewById(R.id.gender);
         exang = findViewById(R.id.exang);
         ca = findViewById(R.id.ca);
@@ -73,6 +91,13 @@ public class DetailActivity extends AppCompatActivity {
         info8 = findViewById(R.id.info8);
         result = findViewById(R.id.result);
         tips = findViewById(R.id.tips);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        // below line is used to get reference for our database.
+        databaseReference = firebaseDatabase.getReference("UserInfo");
+
+        userInfo = new UserInfo();
 
         predict.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,9 +139,13 @@ public class DetailActivity extends AppCompatActivity {
                                         if (data.equals("0")){
                                             result.setTextColor(Color.parseColor("#5bdeac"));
                                             result.setText("Patient likely does not have Heart Disease");
+                                            String ageSave = ageEdit.getText().toString();
+                                            addDatatoFirebase(ageSave);
                                         }else {
                                             result.setTextColor(Color.parseColor("#EC4C4C"));
                                             result.setText("Patient likely has Heart Disease");
+                                            String ageSave = ageEdit.getText().toString();
+                                            addDatatoFirebase(ageSave);
                                         }
 
                                         cp.setText("");
@@ -127,7 +156,7 @@ public class DetailActivity extends AppCompatActivity {
                                         trestbps.setText("");
                                         fbs.setText("");
                                         oldpeak.setText("");
-                                        age.setText("");
+                                        ageEdit.setText("");
                                         gender.setText("");
                                         ca.setText("");
                                         thal.setText("");
@@ -250,6 +279,33 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(DetailActivity.this,InfoActivity.class));
                 finish();
+            }
+        });
+    }
+
+    private void addDatatoFirebase(String ageSave) {
+        // below 3 lines of code is used to set
+        // data in our object class.
+        userInfo.setAges(ageSave);
+
+        // we are use add value event listener method
+        // which is called with database reference.
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // inside the method of on Data change we are setting
+                // our object class to our database reference.
+                // data base reference will sends data to firebase.
+                databaseReference.setValue(userInfo);
+
+                // after adding this data we are showing toast message.
+                Toast.makeText(DetailActivity.this, "data added", Toast.LENGTH_LONG).show();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // if the data is not added or it is cancelled then
+                // we are displaying a failure toast message.
+                Toast.makeText(DetailActivity.this, "Fail to add data " + error, Toast.LENGTH_LONG).show();
             }
         });
     }
