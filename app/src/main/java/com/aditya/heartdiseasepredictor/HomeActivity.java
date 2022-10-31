@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     SwitchCompat switchCompat;
-    MaterialCardView cardView, cardView2;
+    MaterialCardView cardView, cardView2, cardView_help;
     FloatingActionButton floatingActionButton;
     Button button_logout;
     FirebaseAuth mAuth;
@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         switchCompat = findViewById(R.id.modeSwitch);
         cardView = findViewById(R.id.cardView);
         cardView2 = findViewById(R.id.cardView2);
+        cardView_help = findViewById(R.id.cardView_help);
         floatingActionButton = findViewById(R.id.about);
 
         button_logout = findViewById(R.id.button_logout);
@@ -68,12 +69,20 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//
-//        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(HomeActivity.this,AboutActivity.class));
-//            }
-//        });
+
+        cardView_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,HelpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,AboutActivity.class));
+            }
+        });
     }
 }

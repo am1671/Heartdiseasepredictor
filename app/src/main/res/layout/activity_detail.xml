@@ -20,10 +20,12 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_height="50sp"
+                android:layout_marginBottom="15sp"
+                android:background="#00BCD4"
                 android:gravity="center"
                 android:text="Fill in your Details"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -39,8 +41,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="AGE"
-                    android:textSize="14sp"
+                    android:text="Age"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,9 +56,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp"
-                        android:hint="AGE"
+                        android:hint="Age of the patient"
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info9"
                         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +89,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Gender"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,7 +105,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="1-male and 0-female"
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info10"
                         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +135,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
                     android:text="Chest Pain type"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -149,7 +151,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Chest Pain type"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info1"
                         app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +182,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Max heart rate"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -196,7 +198,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Heart rate"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info2"
                         app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +229,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Exercise ST"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -243,7 +245,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Slope"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info3"
                         app:layout_constraintStart_toStartOf="parent"
@@ -274,7 +276,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Resting ECG"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -290,7 +292,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Resting ECG"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info4"
                         app:layout_constraintStart_toStartOf="parent"
@@ -320,7 +322,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Cholestrol"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -336,7 +338,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Cholestrol in mg/dl"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -366,7 +368,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Resting Blood Pressure"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -382,7 +384,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Resting BP in mmHg"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info6"
                         app:layout_constraintStart_toStartOf="parent"
@@ -412,7 +414,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Fasting Blood Sugar"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -428,7 +430,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Fasting Blood Sugar"
                         android:numeric="integer"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info7"
                         app:layout_constraintStart_toStartOf="parent"
@@ -460,7 +462,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="ST depression"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -476,7 +478,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="ST depression"
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info8"
                         app:layout_constraintStart_toStartOf="parent"
@@ -507,7 +509,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Exang"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -523,7 +525,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Exang "
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info11"
                         app:layout_constraintStart_toStartOf="parent"
@@ -554,7 +556,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="CA"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -570,7 +572,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Number of major vessels(0-3) "
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info12"
                         app:layout_constraintStart_toStartOf="parent"
@@ -601,7 +603,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:text="Thal"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -617,7 +619,7 @@
                         android:layout_marginEnd="20dp"
                         android:hint="Thalium stress result "
                         android:numeric="decimal"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@+id/info13"
                         app:layout_constraintStart_toStartOf="parent"
@@ -646,7 +648,7 @@
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="#00BCD4"
                 android:text="PREDICT"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/result"
@@ -663,6 +665,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:backgroundTint="#00BCD4"
                 android:text="Tips to Improve"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
